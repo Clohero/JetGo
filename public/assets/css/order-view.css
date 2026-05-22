@@ -1,0 +1,151 @@
+.page-title {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.page-title strong {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.back-link {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.back-link:hover {
+    color: var(--orange);
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.detail-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.detail-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detail-right {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detail-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detail-section-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.detail-row:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+
+.detail-key {
+    color: var(--text2);
+}
+
+.detail-cost {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.tl-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.tl-item {
+    display: flex;
+    gap: 14px;
+}
+
+.tl-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background-color: var(--bg);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.tl-dot.done {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+
+.tl-dot.current {
+    border-color: var(--orange);
+}
+
+.tl-line {
+    width: 2px;
+    flex: 1;
+    min-height: 20px;
+    background-color: var(--border);
+}
+
+.tl-line.done {
+    background-color: var(--orange);
+}
+
+.tl-body {
+    padding-bottom: 18px;
+}
+
+.tl-name {
+    font-size: 13px;
+}
+
+.tl-name.muted {
+    color: var(--muted);
+}
+
+.tl-hint {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.tl-hint.current {
+    color: var(--orange);
+}

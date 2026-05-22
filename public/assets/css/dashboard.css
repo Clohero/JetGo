@@ -1,0 +1,126 @@
+.page-title {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.page-title strong {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.page-sub {
+    font-size: 13px;
+    color: var(--text2);
+}
+
+.stats-row {
+    display: flex;
+    gap: 16px;
+}
+
+.stat-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.stat-card .num {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.stat-card .lbl {
+    font-size: 11px;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.02);
+    color: inherit;
+}
+
+.order-row:hover {
+    border-color: rgba(255, 90, 30, 0.3);
+}
+
+.order-id {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.order-route {
+    font-size: 13px;
+    flex: 1;
+}
+
+.order-arrow {
+    color: var(--orange);
+}
+
+.order-type {
+    font-size: 13px;
+    color: var(--text2);
+}
+
+.order-date {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.empty-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 60px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 48px;
+}
+
+.empty-title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.empty-sub {
+    font-size: 13px;
+    color: var(--text2);
+}
