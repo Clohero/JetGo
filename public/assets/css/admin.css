@@ -1,0 +1,170 @@
+.admin-wrap {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background-color: #080808;
+    border-right: 1px solid var(--border);
+    padding-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.admin-sidebar-logo {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 24px 20px;
+}
+
+.admin-sidebar-logo span {
+    color: var(--orange);
+}
+
+.admin-nav-link {
+    display: block;
+    padding: 13px 20px;
+    font-size: 13px;
+    color: var(--text2);
+}
+
+.admin-nav-link:hover {
+    color: var(--text);
+    background-color: rgba(255, 90, 30, 0.05);
+}
+
+.admin-nav-link.active {
+    color: var(--text);
+    background-color: rgba(255, 90, 30, 0.05);
+    border-left: 3px solid var(--orange);
+}
+
+.admin-content {
+    margin-left: 220px;
+    flex: 1;
+    padding-top: 12vh;
+}
+
+.admin-inner {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.page-title strong {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.stats-row {
+    display: flex;
+    gap: 16px;
+}
+
+.stat-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.stat-card .num {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.stat-card .lbl {
+    font-size: 11px;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-table-wrap {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background-color: #080808;
+}
+
+.admin-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.admin-table tr:last-child td {
+    border: none;
+}
+
+.admin-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.order-id {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.order-cost {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.order-date {
+    color: var(--muted);
+}
+
+.status-select {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    color: var(--text);
+    font-family: "Roboto Mono", monospace;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+}
+
+.status-select:focus {
+    border-color: var(--orange);
+}
+
+.status-select option {
+    background-color: #111111;
+    color: #ffffff;
+}
