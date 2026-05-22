@@ -121,7 +121,7 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
                         <p class="detail-section-title">Груз</p>
                         <div class="detail-row">
                             <span class="detail-key">Описание</span>
-                            <span><?= $o['cargo_description'] ?></span>
+                            <span><?= $o['description'] ?></span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-key">Тип посылки</span>
@@ -129,7 +129,7 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
                         </div>
                         <div class="detail-row">
                             <span class="detail-key">Вес</span>
-                            <span><?= $o['cargo_weight'] ?> кг</span>
+                            <span><?= $o['weight'] ?> кг</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-key">Тип</span>

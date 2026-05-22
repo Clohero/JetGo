@@ -113,7 +113,7 @@ $categories = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM categories"), 
                     <div class="form-row desc-order">
                         <div class="form-group">
                             <label class="form-label">Описание</label>
-                            <input class="form-input" type="text" name="cargo_description"
+                            <input class="form-input" type="text" name="description"
                                 placeholder="Документы, одежда..." required>
                         </div>
                         <div class="form-second-group">
@@ -128,7 +128,7 @@ $categories = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM categories"), 
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Вес (кг)</label>
-                                <input class="form-input" type="number" name="cargo_weight" id="cargo_weight" step="0.1"
+                                <input class="form-input" type="number" name="weight" id="weight" step="0.1"
                                     min="0.1" placeholder="1.5" required>
                             </div>
                         </div>

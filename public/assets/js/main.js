@@ -1,4 +1,4 @@
-const weightInput = document.getElementById('cargo_weight')
+const weightInput = document.getElementById('weight')
 const costDisplay = document.getElementById('cost_display')
 const costVal = document.getElementById('cost_val')
 
