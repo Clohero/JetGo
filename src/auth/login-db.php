@@ -33,5 +33,11 @@ $_SESSION['user_id'] = $user['id'];
 $_SESSION['name'] = $user['full_name'];
 $_SESSION['role'] = $user['role'];
 
-header("Location: ../../public/dashboard.php");
+if ($user['role'] == 'admin') {
+    header("Location: ../../src/admin/index.php");
+} elseif ($user['role'] == 'courier') {
+    header("Location: ../../public/courier/dashboard.php");
+} else {
+    header("Location: ../../public/dashboard.php");
+}
 exit;

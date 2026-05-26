@@ -22,5 +22,7 @@
                 <a class="nav-logout" href="/src/auth/logout.php">Выйти</a>
             <?php endif; ?>
         </div>
+
+        <button class="theme-toggle" id="themeToggle">☀</button>
     </div>
 </header>

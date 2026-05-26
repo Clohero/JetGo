@@ -81,3 +81,20 @@
     color: var(--orange);
     font-weight: 700;
 }
+
+
+
+.theme-toggle {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text2);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
+.theme-toggle:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
