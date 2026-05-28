@@ -133,5 +133,5 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
 
     <?php include '../../templates/footer.php'; ?>
 </body>
-
+<script src="/public/assets/js/main.js"></script>
 </html>

@@ -26,3 +26,8 @@
         <button class="theme-toggle" id="themeToggle">☀</button>
     </div>
 </header>
+<script>
+if (localStorage.getItem('theme') == 'light') {
+    document.body.classList.add('light')
+}
+</script>

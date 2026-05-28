@@ -74,5 +74,5 @@ $users = mysqli_query($conn, "
 
     <?php include '../../templates/footer.php'; ?>
 </body>
-
+<script src="/public/assets/js/main.js"></script>
 </html>

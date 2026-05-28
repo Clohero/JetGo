@@ -62,5 +62,5 @@ $error = $_GET['error'] ?? '';
 
     <?php include '../templates/footer.php'; ?>
 </body>
-
+<script src="/public/assets/js/main.js"></script>
 </html>

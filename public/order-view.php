@@ -159,5 +159,5 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
 
     <?php include '../templates/footer.php'; ?>
 </body>
-
+<script src="/public/assets/js/main.js"></script>   
 </html>

@@ -20,16 +20,17 @@ function selectCard(card) {
     calcCost()
 }
 
-weightInput.addEventListener('input', calcCost)
+if (weightInput) {
+    weightInput.addEventListener('input', calcCost)
 
-document.querySelectorAll('.delivery-card').forEach(function(card) {
-    card.addEventListener('click', function() {
-        selectCard(card)
+    document.querySelectorAll('.delivery-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            selectCard(card)
+        })
     })
-})
 
-calcCost()
-
+    calcCost()
+}
 
 function loadPvz(citySelect, pvzSelect) {
     var id_city = citySelect.value
@@ -57,8 +58,6 @@ if (senderCity) {
         loadPvz(recipientCity, recipientPvz)
     })
 }
-
-
 
 const themeToggle = document.getElementById('themeToggle')
 

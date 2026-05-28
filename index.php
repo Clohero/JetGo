@@ -93,6 +93,6 @@ $cities = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM cities ORDER BY ci
 
     <?php include 'templates/footer.php'; ?>
 
+    <script src="/public/assets/js/main.js"></script>
 </body>
-
 </html>
