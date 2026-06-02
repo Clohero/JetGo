@@ -68,7 +68,12 @@ $cities = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM cities ORDER BY ci
                     <div class="service-card">
                         <h3>Личный кабинет</h3>
                         <p>Все ваши заказы в одном месте. Статус в реальном времени.</p>
-                        <a class="service-price" href="public/dashboard.php">Перейти →</a>
+                        <?php if (!isset($_SESSION['user'])): ?>
+                            <a class="service-price btn" href="public/logingit.php">Перейти</a>
+                        <?php else: ?>
+                            <a class="service-price btn" href="public/dashboard.php">Перейти</a>
+                        <?php endif; ?>
+                        
                     </div>
                 </div>
             </div>
