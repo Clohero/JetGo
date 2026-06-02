@@ -15,6 +15,12 @@
     --text2: #aaaaaa;
     --muted: #666666;
     --border: rgba(255, 255, 255, 0.10);
+    --bg2: #080808;
+    --bg3: #0a0a0a;
+    --row-hover: rgba(255, 255, 255, 0.02);
+    --row-border: rgba(255, 255, 255, 0.04);
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 body.light {
@@ -23,6 +29,17 @@ body.light {
     --text2: #555555;
     --muted: #999999;
     --border: rgba(0, 0, 0, 0.10);
+    --bg: #f0f0f0;
+    --bg2: #e0e0e0;
+    --bg3: #e8e8e8;
+    --text: #111111;
+    --text2: #555555;
+    --muted: #888888;
+    --border: rgba(0, 0, 0, 0.12);
+    --row-hover: rgba(0, 0, 0, 0.03);
+    --row-border: rgba(0, 0, 0, 0.06);
+    --input-bg: rgba(0, 0, 0, 0.05);
+    --card-bg: rgba(0, 0, 0, 0.03);
 }
 
 body {
@@ -72,8 +89,9 @@ a {
     font-size: 13px;
     padding: 14px 28px;
     background-color: transparent;
-    color: var(--text);
-    border: 1px solid var(--border);
+    color: #ffffff;
+    border: 2px solid #373737;
+    transition: 0.2s ease;
 }
 
 .btn-outline:hover {
@@ -125,7 +143,7 @@ a {
 }
 
 .form-input::placeholder {
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--muted);
 }
 
 .form-input:focus {
@@ -149,8 +167,8 @@ a {
 }
 
 .form-select option {
-    background-color: #111111;
-    color: #ffffff;
+    background-color: var(--bg2);
+    color: var(--text);
 }
 
 .badge {

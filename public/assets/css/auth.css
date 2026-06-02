@@ -22,7 +22,7 @@
 
 .auth-card {
     width: 440px;
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 44px 48px;

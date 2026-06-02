@@ -6,7 +6,7 @@
 .courier-sidebar {
     width: 220px;
     min-height: 100vh;
-    background-color: #080808;
+    background-color: var(--bg2);
     border-right: 1px solid var(--border);
     padding-top: 12vh;
     display: flex;
@@ -112,12 +112,12 @@
     text-transform: uppercase;
     color: var(--muted);
     border-bottom: 1px solid var(--border);
-    background-color: #080808;
+    background-color: var(--bg2);
 }
 
 .courier-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--row-border);
 }
 
 .courier-table tr:last-child td {
@@ -125,7 +125,7 @@
 }
 
 .courier-table tr:hover td {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: var(--row-hover);
 }
 
 .order-id {
@@ -140,7 +140,7 @@
 }
 
 .status-select {
-    background-color: transparent;
+    background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 5px 10px;
@@ -156,6 +156,6 @@
 }
 
 .status-select option {
-    background-color: #111111;
-    color: #ffffff;
+    background-color: var(--bg2); 
+    color: var(--text);
 }

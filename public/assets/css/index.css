@@ -38,6 +38,7 @@
     font-size: 52px;
     font-weight: 300;
     line-height: 1.1;
+    color: #ffffff;
 }
 
 .hero-title strong {
@@ -89,7 +90,7 @@
     padding: 28px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--card-bg)
 }
 
 .service-icon {
@@ -113,7 +114,7 @@
 }
 
 .stats-section {
-    background-color: #0a0a0a;
+    background-color: var(--bg3)
 }
 
 .stats-grid {
@@ -124,6 +125,7 @@
 .stat-item {
     flex: 1;
     text-align: center;
+    background-color: var(--card-bg);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -156,6 +158,7 @@
     border-radius: 8px;
     font-size: 13px;
     color: var(--text2);
+    background-color: var(--card-bg);
 }
 
 .cta-box {
@@ -167,6 +170,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    background-color: var(--card-bg)
 }
 
 .cta-box h2 {
