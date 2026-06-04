@@ -91,7 +91,13 @@
     color: var(--text2);
     font-size: 16px;
     cursor: pointer;
-    padding: 4px 10px;
+    padding: 10px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-logo{
+    height: 20px;
 }
 
 .theme-toggle:hover {

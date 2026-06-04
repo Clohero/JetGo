@@ -64,7 +64,6 @@ const themeToggle = document.getElementById('themeToggle')
 if (themeToggle) {
     if (localStorage.getItem('theme') == 'light') {
         document.body.classList.add('light')
-        themeToggle.textContent = '☾'
     }
 
     themeToggle.addEventListener('click', function() {
@@ -72,10 +71,8 @@ if (themeToggle) {
 
         if (document.body.classList.contains('light')) {
             localStorage.setItem('theme', 'light')
-            themeToggle.textContent = '☾'
         } else {
             localStorage.setItem('theme', 'dark')
-            themeToggle.textContent = '☀'
         }
     })
 }

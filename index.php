@@ -16,6 +16,7 @@ $cities = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM cities ORDER BY ci
     <link rel="stylesheet" href="public/assets/css/header.css">
     <link rel="stylesheet" href="public/assets/css/footer.css">
     <link rel="stylesheet" href="public/assets/css/index.css">
+    <link rel="icon" href="public/assets/image/logo-page.png" type="image/png">
 </head>
 
 <body>
