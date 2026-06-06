@@ -11,7 +11,7 @@ $sender_pvz = (int) $_POST['sender_pvz'];
 $recip_name = trim($_POST['recipient_name'] ?? '');
 $recip_phone = trim($_POST['recipient_phone'] ?? '');
 $recip_city = trim($_POST['recipient_city'] ?? '');
-$recip_pvz = (int) $_POST['sender_pvz'];
+$recip_pvz = (int) $_POST['recipient_pvz'];
 $desc = trim($_POST['description'] ?? '');
 $category = $_POST['category'] != '' ? (int) $_POST['category'] : 'NULL';
 $weight = floatval($_POST['weight'] ?? 1);
