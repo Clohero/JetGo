@@ -8,12 +8,27 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] != 'admin') {
 
 require_once "../../config/connect-db.php";
 
-$total   = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders"))[0];
-$active  = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_status NOT IN (4, 5)"))[0];
-$done    = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_status = 4"))[0];
-$users   = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE role = 'user'"))[0];
+$total = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders"))[0];
+$active = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_status NOT IN (4, 5)"))[0];
+$done = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_status = 4"))[0];
+$users = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE role = 'user'"))[0];
 
 $statuses = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM status"), MYSQLI_ASSOC);
+
+$filter_status = $_GET['status'] ?? '';
+$filter_date_from = $_GET['date_from'] ?? '';
+$filter_date_to = $_GET['date_to'] ?? '';
+
+$where = "WHERE 1=1";
+if ($filter_status != '') {
+    $where .= " AND o.id_status = $filter_status";
+}
+if ($filter_date_from != '') {
+    $where .= " AND DATE(o.created_at) >= '$filter_date_from'";
+}
+if ($filter_date_to != '') {
+    $where .= " AND DATE(o.created_at) <= '$filter_date_to'";
+}
 
 $orders = mysqli_query($conn, "
     SELECT o.id_order, o.sender_name, o.recipient_name, o.delivery_type, o.cost, o.created_at, s.state_name, o.id_status,
@@ -25,6 +40,7 @@ $orders = mysqli_query($conn, "
     JOIN pvz p2 ON o.recipient_pvz = p2.id_pvz
     JOIN cities c1 ON p1.id_city = c1.id_city
     JOIN cities c2 ON p2.id_city = c2.id_city
+    $where
     ORDER BY o.created_at DESC
 ");
 
@@ -76,6 +92,23 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
                 <a class="admin-nav-link" href="users.php">Пользователи</a>
             </div>
 
+            <form class="filter-form" method="GET">
+                <select class="form-select filter-select" name="status">
+                    <option value="">Все статусы</option>
+                    <?php foreach ($statuses as $s): ?>
+                        <option value="<?= $s['id_status'] ?>" <?= $filter_status == $s['id_status'] ? 'selected' : '' ?>>
+                            <?= $s['state_name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <input class="form-input filter-date" type="date" name="date_from" value="<?= $filter_date_from ?>">
+                <input class="form-input filter-date" type="date" name="date_to" value="<?= $filter_date_to ?>">
+                <button type="submit" class="btn-orange filter-btn">Применить</button>
+                <?php if ($filter_status != '' || $filter_date_from != '' || $filter_date_to != ''): ?>
+                    <a class="filter-reset" href="index.php">Сбросить</a>
+                <?php endif; ?>
+            </form>
+
             <div class="admin-table-wrap">
                 <table class="admin-table">
                     <thead>
@@ -92,27 +125,28 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
                     </thead>
                     <tbody>
                         <?php while ($o = mysqli_fetch_assoc($orders)): ?>
-                        <tr>
-                            <td class="order-id"><?= $o['id_order'] ?></td>
-                            <td><?= $o['sender_city'] ?> → <?= $o['recipient_city'] ?></td>
-                            <td><?= $o['sender_name'] ?></td>
-                            <td><?= $o['recipient_name'] ?></td>
-                            <td><?= $type_labels[$o['delivery_type']] ?></td>
-                            <td class="order-cost"><?= number_format($o['cost'], 0, '.', ' ') ?> ₽</td>
-                            <td class="order-date"><?= date('d.m.Y', strtotime($o['created_at'])) ?></td>
-                            <td>
-                                <form method="POST" action="update-status.php">
-                                    <input type="hidden" name="order_id" value="<?= $o['id_order'] ?>">
-                                    <select class="status-select" name="status_id" onchange="this.form.submit()">
-                                        <?php foreach ($statuses as $status): ?>
-                                            <option value="<?= $status['id_status'] ?>" <?= $status['id_status'] == $o['id_status'] ? 'selected' : '' ?>>
-                                                <?= $status['state_name'] ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </form>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td class="order-id"><?= $o['id_order'] ?></td>
+                                <td><?= $o['sender_city'] ?> → <?= $o['recipient_city'] ?></td>
+                                <td><?= $o['sender_name'] ?></td>
+                                <td><?= $o['recipient_name'] ?></td>
+                                <td><?= $type_labels[$o['delivery_type']] ?></td>
+                                <td class="order-cost"><?= number_format($o['cost'], 0, '.', ' ') ?> ₽</td>
+                                <td class="order-date"><?= date('d.m.Y', strtotime($o['created_at'])) ?></td>
+                                <td>
+                                    <form method="POST" action="update-status.php">
+                                        <input type="hidden" name="order_id" value="<?= $o['id_order'] ?>">
+                                        <select class="status-select" name="status_id" onchange="this.form.submit()">
+                                            <?php foreach ($statuses as $status): ?>
+                                                <option value="<?= $status['id_status'] ?>"
+                                                    <?= $status['id_status'] == $o['id_status'] ? 'selected' : '' ?>>
+                                                    <?= $status['state_name'] ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </form>
+                                </td>
+                            </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
@@ -124,4 +158,5 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
     <?php include '../../templates/footer.php'; ?>
 </body>
 <script src="/public/assets/js/main.js"></script>
+
 </html>

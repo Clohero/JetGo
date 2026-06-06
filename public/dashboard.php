@@ -3,11 +3,19 @@ session_start();
 
 require_once '../config/connect-db.php';
 
+$filter_status = $_GET['status'] ?? '';
+$statuses = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM status"), MYSQLI_ASSOC);
+
 $user_id = $_SESSION['user_id'];
 
 $total = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_user = $user_id"))[0];
 $active = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_user = $user_id AND id_status NOT IN (5, 6)"))[0];
 $done = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM orders WHERE id_user = $user_id AND id_status = 5"))[0];
+
+$where = "WHERE o.id_user = $user_id";
+if ($filter_status != '') {
+    $where .= " AND o.id_status = $filter_status";
+}
 
 $orders = mysqli_query($conn, "
     SELECT o.id_order, o.delivery_type, o.created_at, s.state_name,
@@ -19,7 +27,7 @@ $orders = mysqli_query($conn, "
     JOIN pvz p2 ON o.recipient_pvz = p2.id_pvz
     JOIN cities c1 ON p1.id_city = c1.id_city
     JOIN cities c2 ON p2.id_city = c2.id_city
-    WHERE o.id_user = $user_id
+    $where
     ORDER BY o.created_at DESC
 ");
 
@@ -70,6 +78,20 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
 
             <p class="section-tag">История заказов</p>
 
+            <form class="filter-form" method="GET">
+                <select class="form-select filter-select" name="status" onchange="this.form.submit()">
+                    <option value="">Все статусы</option>
+                    <?php foreach ($statuses as $s): ?>
+                        <option value="<?= $s['id_status'] ?>" <?= $filter_status == $s['id_status'] ? 'selected' : '' ?>>
+                            <?= $s['state_name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <?php if ($filter_status != ''): ?>
+                    <a class="filter-reset" href="/public/dashboard.php">Сбросить</a>
+                <?php endif; ?>
+            </form>
+
             <?php if (mysqli_num_rows($orders) == 0): ?>
                 <div class="empty-box">
                     <h3 class="empty-title">Заказов пока нет</h3>
@@ -100,4 +122,5 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
     <?php include '../templates/footer.php'; ?>
 </body>
 <script src="/public/assets/js/main.js"></script>
+
 </html>

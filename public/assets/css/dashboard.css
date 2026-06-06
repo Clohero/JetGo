@@ -125,3 +125,37 @@
     font-size: 13px;
     color: var(--text2);
 }
+
+
+
+
+
+.filter-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.filter-select {
+    width: 180px;
+}
+
+.filter-date {
+    width: 160px;
+    padding: 10px 14px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+    height: auto;
+}
+
+.filter-reset {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.filter-reset:hover {
+    color: var(--orange);
+}
