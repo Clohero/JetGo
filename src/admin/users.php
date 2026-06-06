@@ -26,6 +26,7 @@ $users = mysqli_query($conn, "
     <link rel="stylesheet" href="../../public/assets/css/header.css">
     <link rel="stylesheet" href="../../public/assets/css/footer.css">
     <link rel="stylesheet" href="../../public/assets/css/admin.css">
+    <link rel="icon" href="../../public/assets/image/logo-page.png" type="image/png">
 </head>
 
 <body>

@@ -55,6 +55,7 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/order-view.css">
+    <link rel="icon" href="assets/image/logo-page.png" type="image/png">
 </head>
 
 <body>

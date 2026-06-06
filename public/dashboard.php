@@ -35,6 +35,7 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="icon" href="assets/image/logo-page.png" type="image/png">
 </head>
 
 <body>

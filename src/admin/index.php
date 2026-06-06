@@ -40,6 +40,7 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
     <link rel="stylesheet" href="../../public/assets/css/header.css">
     <link rel="stylesheet" href="../../public/assets/css/footer.css">
     <link rel="stylesheet" href="../../public/assets/css/admin.css">
+    <link rel="icon" href="../../public/assets/image/logo-page.png" type="image/png">
 </head>
 
 <body>
@@ -49,7 +50,7 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
     <div class="page-wrap">
         <div class="page-inner">
 
-            <h1 class="page-title">Панель <strong>администратора</strong></h1>
+            <h1 class="page-title">Панель <strong>Администратора</strong></h1>
 
             <div class="stats-row">
                 <div class="stat-card">

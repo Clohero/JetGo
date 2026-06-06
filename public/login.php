@@ -13,6 +13,7 @@ $error = $_GET['error'] ?? '';
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="icon" href="assets/image/logo-page.png" type="image/png">
 </head>
 
 <body class="auth-page">
