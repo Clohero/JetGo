@@ -54,17 +54,17 @@ $cities = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM cities ORDER BY ci
                     <div class="service-card">
                         <h3>Стандартная доставка</h3>
                         <p>Оптимальный баланс цены и скорости. 5–7 рабочих дней.</p>
-                        <span class="service-price">от 150 ₽/кг</span>
+                        <span class="service-price">от 150р. за кг</span>
                     </div>
                     <div class="service-card">
                         <h3>Экспресс</h3>
                         <p>Срочные отправления. Приоритетная обработка. 3–5 дня.</p>
-                        <span class="service-price">от 280 ₽/кг</span>
+                        <span class="service-price">от 280р. за кг</span>
                     </div>
                     <div class="service-card">
                         <h3>Премиум доставка</h3>
                         <p>Персональное сопровождение и страховка груза. до 3-х дней</p>
-                        <span class="service-price">от 550 ₽/кг</span>
+                        <span class="service-price">от 550р. за кг</span>
                     </div>
                     <div class="service-card">
                         <h3>Личный кабинет</h3>

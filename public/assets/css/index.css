@@ -153,12 +153,19 @@
 }
 
 .city-tag {
+    cursor: pointer;
     padding: 10px 16px;
     border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 13px;
     color: var(--text2);
     background-color: var(--card-bg);
+    transition: 0.1s ease;
+}
+.city-tag:hover{
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    background-color: rgba(255, 90, 30, 0.15);;
 }
 
 .cta-box {
