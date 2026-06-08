@@ -152,6 +152,13 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
                         <p class="detail-section-title">Статус заказа</p>
                         <span class="badge"><?= $o['state_name'] ?></span>
                     </div>
+
+                    <?php if ($o['id_status'] != 4 && $o['id_status'] != 5): ?>
+                        <form method="POST" action="/src/orders/cancel.php">
+                            <input type="hidden" name="order_id" value="<?= $o['id_order'] ?>">
+                            <button type="submit" class="cancel-btn">Отменить заказ</button>
+                        </form>
+                    <?php endif; ?>
                 </div>
 
             </div>
@@ -160,5 +167,6 @@ $type_labels = ['standard' => 'Стандарт (5–7 дней)', 'express' => 
 
     <?php include '../templates/footer.php'; ?>
 </body>
-<script src="/public/assets/js/main.js"></script>   
+<script src="/public/assets/js/main.js"></script>
+
 </html>
