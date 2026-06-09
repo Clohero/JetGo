@@ -12,8 +12,14 @@
         </div>
         <div class="footer-col">
             <h3>Клиентам</h3>
-            <a href="/public/order-new.php">Оформить заказ</a>
-            <a href="/public/dashboard.php">Мои заказы</a>
+            <?php if (!isset($_SESSION['user'])): ?>
+                <a href="/public/login.php">Оформить заказ</a>
+                <a href="/public/login.php">Мои заказы</a>
+            <?php else: ?>
+                <a href="/public/order-new.php">Оформить заказ</a>
+                <a href="/public/dashboard.php">Мои заказы</a>
+            <?php endif; ?>
+
         </div>
         <div class="footer-col">
             <h3>Контакты</h3>
