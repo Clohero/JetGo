@@ -14,6 +14,11 @@ $courier_info = mysqli_fetch_assoc(mysqli_query($conn, "
     SELECT * FROM couriers WHERE id_user = $user_id
 "));
 
+if (!$courier_info) {
+    echo "Курьер не найден в системе. id_user = $user_id";
+    exit;
+}
+
 $statuses = mysqli_fetch_all(mysqli_query($conn, "SELECT * FROM status"), MYSQLI_ASSOC);
 
 $orders = mysqli_query($conn, "
@@ -27,6 +32,7 @@ $orders = mysqli_query($conn, "
     JOIN pvz p2 ON o.recipient_pvz = p2.id_pvz
     JOIN cities c1 ON p1.id_city = c1.id_city
     JOIN cities c2 ON p2.id_city = c2.id_city
+    WHERE o.id_courier = $courier_info[id_courier]
     ORDER BY o.created_at DESC
 ");
 

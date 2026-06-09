@@ -16,7 +16,7 @@ $courier = mysqli_fetch_assoc(mysqli_query($conn, "
 
 $orders = mysqli_query($conn, "
     SELECT o.id_order, o.sender_name, o.sender_phone, o.recipient_name, o.recipient_phone,
-        o.weight, o.delivery_type, o.created_at,
+        o.weight, o.delivery_type, o.created_at, o.cost,
         p1.address AS sender_address, p2.address AS recipient_address,
         c1.city_name AS sender_city, c2.city_name AS recipient_city
     FROM orders o
@@ -27,6 +27,8 @@ $orders = mysqli_query($conn, "
     WHERE o.id_courier = $courier[id_courier] AND o.id_status NOT IN (4, 5)
     ORDER BY o.created_at ASC
 ");
+
+
 
 $orders_list = mysqli_fetch_all($orders, MYSQLI_ASSOC);
 $order_count = count($orders_list);
