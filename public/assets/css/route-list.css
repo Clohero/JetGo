@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    padding: 30px 40px;
+    font-size: 13px;
+}
+
+.route-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.route-header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+.info-table td {
+    border: 1px solid #000;
+    padding: 8px 12px;
+}
+
+.info-key {
+    font-weight: 700;
+    width: 220px;
+    background-color: #f5f5f5;
+}
+
+.section-h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+.orders-table th {
+    border: 1px solid #000;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+.orders-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    min-height: 28px;
+}
+
+.notes {
+    margin-bottom: 30px;
+}
+
+.notes p {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.notes-line {
+    border-bottom: 1px solid #000;
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+.signature {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.print-btn-wrap {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.print-btn {
+    padding: 10px 24px;
+    background-color: #ff5a1e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.back-link {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    body {
+        padding: 10px 20px;
+    }
+}

@@ -79,7 +79,7 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
                         </div>
                     </div>
                     <?php endif; ?>
-
+                    <a href="/public/courier/route-list.php" class="btn-orange">Сформировать маршрутный лист</a>
                     <p class="section-tag">Список заказов</p>
 
                     <div class="courier-table-wrap">

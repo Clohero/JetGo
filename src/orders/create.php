@@ -26,12 +26,29 @@ foreach($values as $value){
     }
 }
 
+$id_courier = 'NULL';
+
+$free_courier = mysqli_fetch_assoc(mysqli_query($conn, "
+    SELECT c.id_courier, COUNT(o.id_order) AS order_count
+    FROM couriers c
+    LEFT JOIN orders o ON c.id_courier = o.id_courier AND o.id_status NOT IN (4, 5)
+    WHERE c.courier_status = 'active'
+    GROUP BY c.id_courier
+    HAVING order_count < 10
+    ORDER BY order_count ASC
+    LIMIT 1
+"));
+
+if ($free_courier) {
+    $id_courier = $free_courier['id_courier'];
+}
+
 $query = mysqli_query($conn, "INSERT INTO orders (id_user, sender_name, sender_phone, sender_pvz,
                                 recipient_name, recipient_phone, recipient_pvz,
-                                description, id_category, weight, delivery_type, cost)
+                                description, id_category, weight, delivery_type, cost, id_courier)
                                 VALUES ($user_id, '$sender_name', '$sender_phone', $sender_pvz,
                                 '$recip_name', '$recip_phone', $recip_pvz,
-                                '$desc', $category, $weight, '$delivery_type', $cost)");
+                                '$desc', $category, $weight, '$delivery_type', $cost, $id_courier)");
 
 if ($query) {
     $order_id = mysqli_insert_id($conn);
