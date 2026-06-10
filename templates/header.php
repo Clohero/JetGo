@@ -23,8 +23,9 @@
             <?php endif; ?>
         </div>
 
-        <!-- <button class="theme-toggle" id="themeToggle">☀</button> -->
-        <button class="theme-toggle" id="themeToggle"><img class="theme-logo" src="../public/assets/image/theme.png" alt=""></button>
+        <button class="theme-toggle" id="themeToggle">
+            <img class="theme-logo" src="/public/assets/image/theme.png" alt="">
+        </button>
     </div>
 </header>
 <script>

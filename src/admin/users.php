@@ -31,17 +31,12 @@ $users = mysqli_query($conn, "
 
 <body>
 
-    <?php include '../../templates/header.php'; ?>
+    <?php include '../../templates/header-admin.php'; ?>
 
     <div class="page-wrap">
         <div class="page-inner">
-
-            <h1 class="page-title">Пользователи <strong>системы</strong></h1>
-
-            <div class="admin-nav">
-                <a class="admin-nav-link" href="index.php">Заказы</a>
-                <a class="admin-nav-link active" href="users.php">Пользователи</a>
-            </div>
+            
+            <h1 class="page-title"><strong>Пользователи системы</strong></h1>
 
             <div class="admin-table-wrap">
                 <table class="admin-table">

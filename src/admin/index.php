@@ -61,13 +61,15 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
 
 <body>
 
-    <?php include '../../templates/header.php'; ?>
+    <?php include '../../templates/header-admin.php'; ?>
 
     <div class="page-wrap">
         <div class="page-inner">
 
-            <h1 class="page-title">Панель <strong>Администратора</strong></h1>
-
+            <!-- <h1 class="page-title">Панель <strong>Администратора</strong></h1> -->
+            <h1 class="page-title">
+                <strong>Заказы</strong>
+            </h1>
             <div class="stats-row">
                 <div class="stat-card">
                     <div class="num"><?= $total ?></div>
@@ -85,11 +87,6 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
                     <div class="num"><?= $users ?></div>
                     <div class="lbl">Клиентов</div>
                 </div>
-            </div>
-
-            <div class="admin-nav">
-                <a class="admin-nav-link active" href="index.php">Заказы</a>
-                <a class="admin-nav-link" href="users.php">Пользователи</a>
             </div>
 
             <form class="filter-form" method="GET">

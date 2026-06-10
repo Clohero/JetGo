@@ -53,16 +53,10 @@ $type_labels = ['standard' => 'Стандарт', 'express' => 'Экспресс
 
 <body>
 
-    <?php include '../../templates/header.php'; ?>
+    <?php include '../../templates/header-courier.php'; ?>
 
     <div class="page-wrap">
         <div class="courier-wrap">
-
-            <aside class="courier-sidebar">
-                <div class="courier-sidebar-logo">JET<span>GO</span></div>
-                <a class="courier-nav-link active" href="/public/courier/dashboard.php">Заказы</a>
-                <a class="courier-nav-link" href="/src/auth/logout.php">Выйти</a>
-            </aside>
 
             <div class="courier-content">
                 <div class="courier-inner">

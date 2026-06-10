@@ -38,6 +38,6 @@ if ($user['role'] == 'admin') {
 } elseif ($user['role'] == 'courier') {
     header("Location: ../../public/courier/dashboard.php");
 } else {
-    header("Location: ../../public/dashboard.php");
+    header("Location: ../../index.php");
 }
 exit;
