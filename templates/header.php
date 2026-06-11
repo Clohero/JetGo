@@ -4,9 +4,9 @@
         <a class="logo" href="/index.php">JET<span>GO</span></a>
 
         <nav class="nav">
-            <a class="nav-link" href="/index.php">Главная</a>
-            <a class="nav-link" href="#">Услуги</a>
-            <a class="nav-link" href="#">О нас</a>
+            <a class="nav-link" href="/index.php#">Главная</a>
+            <a class="nav-link" href="/index.php#services">Услуги</a>
+            <a class="nav-link" href="/index.php#cities">Доп информация</a>
             <?php if (isset($_SESSION['user'])): ?>
                 <a class="nav-link" href="/public/dashboard.php">Мои заказы</a>
             <?php endif; ?>
